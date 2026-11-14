@@ -1,0 +1,63 @@
+body { 
+    margin: 0; overflow: hidden; background-color: #010401; 
+    font-family: 'Courier New', Courier, monospace; user-select: none; color: white;
+}
+#canvas-container { width: 100vw; height: 100vh; position: relative; }
+
+/* Contenedores de UI transparentes y minimalistas */
+.ui-panel { 
+    position: absolute; 
+    background: rgba(0, 0, 0, 0.4); 
+    padding: 15px; 
+    border-radius: 8px; 
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    pointer-events: none; 
+    z-index: 10;
+}
+
+#hud-top { top: 20px; left: 20px; }
+#hud-bottom { bottom: 20px; left: 20px; }
+
+.stat { font-size: 16px; font-weight: bold; margin-bottom: 5px; text-shadow: 1px 1px 2px black; }
+
+/* crosshair removed */
+
+#boss-alert {
+    position: absolute; top: 22%; left: 50%; transform: translate(-50%, -50%);
+    color: #ff3333; font-size: 26px; font-weight: bold; background: rgba(0,0,0,0.85);
+    padding: 15px 30px; border: 2px dashed red; border-radius: 4px; display: none;
+    text-align: center; z-index: 500;
+}
+
+#game-over {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    color: #ff0000; font-size: 40px; font-weight: bold; background: rgba(0,0,0,0.95);
+    padding: 40px; border: 3px solid red; display: none; text-align: center; z-index: 1000;
+}
+
+/* Menu shared styles (from index.html) */
+#menu, #pause-menu {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.95); z-index: 2000;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+}
+#pause-menu { display: none; }
+
+h1, h2 { color: #fff; margin-bottom: 30px; letter-spacing: 5px; }
+
+.menu-btn {
+    padding: 15px 40px; margin: 10px; font-size: 20px;
+    cursor: pointer; background: transparent; color: white;
+    border: 2px solid white; transition: 0.3s;
+    font-family: 'Courier New', Courier, monospace;
+}
+.menu-btn:hover { background: white; color: black; }
+
+/* Form controls used in LAN UI */
+textarea, select, input[type="text"], input[type="number"] {
+    background: rgba(255,255,255,0.04); color: #fff; border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px; border-radius: 6px; box-sizing: border-box; font-family: monospace;
+}
+label { display:block; margin-bottom:6px; font-weight:600; }
+
+.panel { background: rgba(0,0,0,0.6); padding: 16px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); }
